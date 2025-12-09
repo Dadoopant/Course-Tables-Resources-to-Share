@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concise Comparison Table</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.4;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        
+        h1 {
+            color: #1a202c;
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #2c5282;
+            padding-bottom: 10px;
+        }
+        
+        table {
+            width: 100%;
+            background: white;
+            border-collapse: collapse;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        th.dimension {
+            width: 180px;
+            background: #553c9a;
+        }
+        
+        th.case {
+            text-align: center;
+        }
+        
+        .case-label {
+            font-size: 15px;
+            font-weight: bold;
+        }
+        
+        .case-type {
+            font-size: 11px;
+            font-weight: normal;
+            opacity: 0.9;
+            margin-top: 3px;
+        }
+        
+        tbody tr:nth-child(even) {
+            background: #f7fafc;
+        }
+        
+        tbody tr:hover {
+            background: #edf2f7;
+        }
+        
+        td {
+            padding: 12px 15px;
+            font-size: 13px;
+            color: #2d3748;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+        
+        td.dimension {
+            font-weight: 600;
+            color: #2c5282;
+            background: #edf2f7;
+            border-right: 2px solid #cbd5e0;
+        }
+        
+        .section-header {
+            background: linear-gradient(90deg, #4299e1 0%, #667eea 100%) !important;
+            color: white !important;
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 10px 15px !important;
+        }
+        
+        .poor-fail {
+            border-left: 4px solid #fc8181;
+        }
+        
+        .poor-success {
+            border-left: 4px solid #68d391;
+        }
+        
+        .rich-fail {
+            border-left: 4px solid #f6ad55;
+        }
+        
+        .rich-success {
+            border-left: 4px solid #4fd1c5;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+        .badge-fail {
+            background: #fed7d7;
+            color: #c53030;
+        }
+        
+        .badge-success {
+            background: #c6f6d5;
+            color: #2f855a;
+        }
+        
+        .badge-mixed {
+            background: #feebc8;
+            color: #c05621;
+        }
+        
+        .highlight {
+            background: #fef5e7;
+            padding: 4px;
+            border-left: 2px solid #f39c12;
+            font-style: italic;
+        }
+        
+        strong {
+            color: #1a202c;
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            table {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Climate Resilience Case Comparison: Rich vs. Poor × Success vs. Failure</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th class="dimension">Dimension</th>
+                <th class="case">
+                    <div class="case-label">NYC Basements</div>
+                    <div class="case-type">Poor/Vulnerable — FAILURE</div>
+                </th>
+                <th class="case">
+                    <div class="case-label">New Orleans Hubs</div>
+                    <div class="case-type">Poor/Vulnerable — SUCCESS?</div>
+                </th>
+                <th class="case">
+                    <div class="case-label">The Hamptons</div>
+                    <div class="case-type">Rich/Powerful — FAILURE</div>
+                </th>
+                <th class="case">
+                    <div class="case-label">Carlsbad Retreat</div>
+                    <div class="case-type">Rich/Powerful — SUCCESS</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- SECTION: LOCATION -->
+            <tr>
+                <td colspan="5" class="section-header">LOCATION & CONTEXT</td>
+            </tr>
+            <tr>
+                <td class="dimension">Location</td>
+                <td class="poor-fail">Queens/Bronx, NYC</td>
+                <td class="poor-success">New Orleans, LA</td>
+                <td class="rich-fail">Southampton/E. Hampton, NY</td>
+                <td class="rich-success">Carlsbad, CA</td>
+            </tr>
+            <tr>
+                <td class="dimension">Income</td>
+                <td class="poor-fail"><strong>$40-60k</strong></td>
+                <td class="poor-success"><strong>$42k</strong> citywide</td>
+                <td class="rich-fail"><strong>$120k+</strong></td>
+                <td class="rich-success"><strong>$105k+</strong></td>
+            </tr>
+            <tr>
+                <td class="dimension">Demographics</td>
+                <td class="poor-fail">60-80% minority immigrants</td>
+                <td class="poor-success">60% Black, 30% other</td>
+                <td class="rich-fail">85%+ white</td>
+                <td class="rich-success">65% white, 25% Latino</td>
+            </tr>
+            <tr>
+                <td class="dimension">Housing</td>
+                <td class="poor-fail">90%+ renters</td>
+                <td class="poor-success">55% renters</td>
+                <td class="rich-fail">70%+ vacation homes</td>
+                <td class="rich-success">60% owners</td>
+            </tr>
+            
+            <!-- SECTION: CLIMATE THREAT -->
+            <tr>
+                <td colspan="5" class="section-header">CLIMATE THREAT</td>
+            </tr>
+            <tr>
+                <td class="dimension">Threat Type</td>
+                <td class="poor-fail">Flash flooding (Ida 2021: 11 deaths)</td>
+                <td class="poor-success">Hurricane surge + subsidence</td>
+                <td class="rich-fail">Chronic erosion (1-3 ft/year)</td>
+                <td class="rich-success">Coastal erosion, bluff retreat</td>
+            </tr>
+            <tr>
+                <td class="dimension">Vulnerability</td>
+                <td class="poor-fail">Below-grade units, illegal construction, no drainage</td>
+                <td class="poor-success">Below sea level, aging pumps, subsiding land</td>
+                <td class="rich-fail">Barrier island, sandy substrate, narrow beach</td>
+                <td class="rich-success">Unstable geology, wave undermining</td>
+            </tr>
+            <tr>
+                <td class="dimension">Future Risk</td>
+                <td class="poor-fail">100-year flood now 25-year event</td>
+                <td class="poor-success">Cat 3+ hurricane overtops levees</td>
+                <td class="rich-fail">Beach loss inevitable without perpetual intervention</td>
+                <td class="rich-success">Highway threatened in 20-30 years</td>
+            </tr>
+            
+            <!-- SECTION: INTERVENTIONS -->
+            <tr>
+                <td colspan="5" class="section-header">RESILIENCE INTERVENTIONS</td>
+            </tr>
+            <tr>
+                <td class="dimension">Type</td>
+                <td class="poor-fail"><span class="badge badge-fail">NONE</span> Sensors only, no housing alternatives</td>
+                <td class="poor-success">Social infrastructure: community hubs, networks, training</td>
+                <td class="rich-fail">Beach nourishment, groins, seawalls, property elevation</td>
+                <td class="rich-success">Managed retreat: move highway inland, zoning setbacks</td>
+            </tr>
+            <tr>
+                <td class="dimension">Funding</td>
+                <td class="poor-fail"><strong>~$0</strong> proactive</td>
+                <td class="poor-success"><strong>$15M+</strong> (FEMA, nonprofits, city)</td>
+                <td class="rich-fail"><strong>$30M+</strong> per cycle (65% federal); hundreds of millions total</td>
+                <td class="rich-success"><strong>$40M+</strong> (Caltrans, BRIC, local)</td>
+            </tr>
+            <tr>
+                <td class="dimension">Governance</td>
+                <td class="poor-fail">City inaction (political paralysis)</td>
+                <td class="poor-success">Hybrid: federal funds, city coord, community-led</td>
+                <td class="rich-fail">Army Corps + local + private owners</td>
+                <td class="rich-success">City-led, state Coastal Commission approval</td>
+            </tr>
+            <tr>
+                <td class="dimension">Timeline</td>
+                <td class="poor-fail">2021-present (no change post-Ida)</td>
+                <td class="poor-success">2005-present (hubs operational 2023-25)</td>
+                <td class="rich-fail">1960s-present (60+ years, 3-5 year cycles)</td>
+                <td class="rich-success">2020s planning; construction 2025-30</td>
+            </tr>
+            
+            <!-- SECTION: ACTORS -->
+            <tr>
+                <td colspan="5" class="section-header">KEY ACTORS & POWER</td>
+            </tr>
+            <tr>
+                <td class="dimension">Who Controls?</td>
+                <td class="poor-fail"><strong>Landlords</strong> profit from illegal units; city avoids enforcement</td>
+                <td class="poor-success"><strong>Community orgs</strong> (neighborhood associations, faith groups, NGOs)</td>
+                <td class="rich-fail"><strong>Homeowners/real estate</strong> lobby for federal funding</td>
+                <td class="rich-success"><strong>City Public Works;</strong> state has veto power</td>
+            </tr>
+            <tr>
+                <td class="dimension">Community Power</td>
+                <td class="poor-fail">Weak (immigration status, language barriers)</td>
+                <td class="poor-success"><strong>Strong</strong> (civil rights legacy, mutual aid)</td>
+                <td class="rich-fail">Weak (individual homeowners, no collective action)</td>
+                <td class="rich-success">Limited (some opposition, environmental support)</td>
+            </tr>
+            
+            <!-- SECTION: OUTCOMES -->
+            <tr>
+                <td colspan="5" class="section-header">OUTCOMES</td>
+            </tr>
+            <tr>
+                <td class="dimension">Physical Result</td>
+                <td class="poor-fail"><span class="badge badge-fail">Zero</span> flood reduction</td>
+                <td class="poor-success"><span class="badge badge-mixed">Partial</span> Faster aid, but flooding continues</td>
+                <td class="rich-fail"><span class="badge badge-fail">Fails</span> Sand washes away in 3-5 years</td>
+                <td class="rich-success"><span class="badge badge-success">Works</span> Highway protected</td>
+            </tr>
+            <tr>
+                <td class="dimension">Who Benefits?</td>
+                <td class="poor-fail">Landlords, city (avoids crisis). <strong>NOT tenants</strong></td>
+                <td class="poor-success">Residents (faster aid), community orgs (capacity)</td>
+                <td class="rich-fail">Homeowners, real estate, contractors</td>
+                <td class="rich-success">Public (highway). <strong>NOT beachfront owners</strong></td>
+            </tr>
+            <tr>
+                <td class="dimension">Who Pays?</td>
+                <td class="poor-fail"><strong>Tenants:</strong> 11 deaths, trauma, ongoing risk</td>
+                <td class="poor-success">Federal taxpayers, residents (organizing labor)</td>
+                <td class="rich-fail"><strong>Working class</strong> via federal insurance/taxes</td>
+                <td class="rich-success">All taxpayers, beachfront owners (lost access)</td>
+            </tr>
+            <tr>
+                <td class="dimension">Displacement</td>
+                <td class="poor-fail">Enforcement would displace 50,000-100,000</td>
+                <td class="poor-success"><div class="highlight">CRITICAL: Did hubs prevent displacement or did area gentrify?</div></td>
+                <td class="rich-fail">No displacement of wealthy; service workers priced out</td>
+                <td class="rich-success">Minimal (few near highway); future development concerns</td>
+            </tr>
+            <tr>
+                <td class="dimension">Sustainability</td>
+                <td class="poor-fail">Unsustainable: risk increasing, no solution</td>
+                <td class="poor-success">Sustainable: social capital persists, model replicable</td>
+                <td class="rich-fail">Utterly unsustainable: perpetual re-investment required</td>
+                <td class="rich-success">Sustainable: one-time fix, addresses root cause</td>
+            </tr>
+            
+            <!-- SECTION: THEORY -->
+            <tr>
+                <td colspan="5" class="section-header">THEORETICAL CONNECTIONS</td>
+            </tr>
+            <tr>
+                <td class="dimension">Molotch (Growth Machine)</td>
+                <td class="poor-fail">Landlord profits from non-enforcement</td>
+                <td class="poor-success">Rebuilding vs. abandonment; growth vs. equity tension</td>
+                <td class="rich-fail">Growth machine can't preserve vanishing commodity</td>
+                <td class="rich-success">Growth machine adapts rationally when resources available</td>
+            </tr>
+            <tr>
+                <td class="dimension">Harvey (Right to City)</td>
+                <td class="poor-fail">Tenants denied right to safe housing</td>
+                <td class="poor-success">Residents assert right to return/remain</td>
+                <td class="rich-fail">Wealthy assert exclusive coastal rights; socialized costs</td>
+                <td class="rich-success">Public infrastructure prioritized; but whose "right"?</td>
+            </tr>
+            <tr>
+                <td class="dimension">Keenan (Climate Gentrification)</td>
+                <td class="poor-fail">Inverse: disinvestment keeps rents low</td>
+                <td class="poor-success"><div class="highlight">TEST: If area gentrified, validates model; if not, shows resistance</div></td>
+                <td class="rich-fail">N/A (already wealthy); but note subsidy pattern</td>
+                <td class="rich-success">Potential future "climate premium" areas</td>
+            </tr>
+            <tr>
+                <td class="dimension">Trounstine (Regulation)</td>
+                <td class="poor-fail">High-value protected, low-value ignored; immigration enforcement enables exploitation</td>
+                <td class="poor-success">Pre-Katrina regulation failed; post-Katrina opportunity lost</td>
+                <td class="rich-fail">Zoning protects high-value; working class excluded from coast</td>
+                <td class="rich-success">Setbacks protect public; but class dimensions in who can afford</td>
+            </tr>
+            <tr>
+                <td class="dimension">Fainstein (Just City)</td>
+                <td class="poor-fail"><span class="badge badge-fail">Fails all 3:</span> No equity (deaths), democracy (no voice), diversity (displacement risk)</td>
+                <td class="poor-success"><span class="badge badge-success">Aligns IF</span> prevents displacement, respects community control</td>
+                <td class="rich-fail"><span class="badge badge-fail">Fails all 3:</span> Inequitable subsidies, elite capture, exclusionary</td>
+                <td class="rich-success"><span class="badge badge-mixed">Mixed:</span> Democratic process, equity depends on who bears costs</td>
+            </tr>
+        </tbody>
+    </table>
+    
+</body>
+</html>
