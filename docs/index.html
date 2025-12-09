@@ -7,44 +7,83 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
-            background: #f9f9f9;
+            background: #f4f4f9;
+            margin: 0;
+            padding: 40px;
         }
+
         h1 {
             text-align: center;
             color: #2c5282;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
-        ul {
-            list-style: none;
-            padding: 0;
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        li {
-            margin: 15px 0;
-            font-size: 18px;
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
-        a {
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .card a {
             text-decoration: none;
             color: #1a202c;
-            padding: 8px 12px;
-            border-radius: 5px;
-            background: #e2e8f0;
-            transition: background 0.2s, color 0.2s;
+            font-size: 18px;
+            font-weight: bold;
         }
-        a:hover {
-            background: #2c5282;
-            color: #fff;
+
+        .card a:hover {
+            color: #2c5282;
+        }
+
+        .description {
+            font-size: 14px;
+            color: #4a5568;
+            margin-top: 8px;
+        }
+
+        @media (max-width: 600px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <h1>Course Tables & Resources</h1>
-    <ul>
-        <li><a href="https://dadoopant.github.io/Course-Tables-Resources-to-Share/Tomao_concise_comparison_table_concise.html" target="_blank">Tomao Concise Comparison Table</a></li>
-        <li><a href="https://dadoopant.github.io/Course-Tables-Resources-to-Share/autumn_comparison_table_4quadrant.html" target="_blank">Autumn Comparison Table (4 Quadrant)</a></li>
-        <li><a href="https://dadoopant.github.io/Course-Tables-Resources-to-Share/detailed_case_framework_extensive.html" target="_blank">Detailed Case Framework (Extensive)</a></li>
-    </ul>
+    <div class="grid">
+        <div class="card">
+            <a href="https://dadoopant.github.io/Course-Tables-Resources-to-Share/Tomao_concise_comparison_table_concise.html" target="_blank">
+                Tomao Concise Comparison Table
+            </a>
+            <div class="description">A concise comparison table summarizing key points.</div>
+        </div>
+        <div class="card">
+            <a href="https://dadoopant.github.io/Course-Tables-Resources-to-Share/autumn_comparison_table_4quadrant.html" target="_blank">
+                Autumn Comparison Table (4 Quadrant)
+            </a>
+            <div class="description">Visualizes data across four quadrants for clarity.</div>
+        </div>
+        <div class="card">
+            <a href="https://dadoopant.github.io/Course-Tables-Resources-to-Share/detailed_case_framework_extensive.html" target="_blank">
+                Detailed Case Framework (Extensive)
+            </a>
+            <div class="description">Full detailed framework analysis of cases.</div>
+        </div>
+    </div>
 </body>
 </html>
