@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detailed Case Analysis Framework</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.5;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f8f9fa;
+        }
+        
+        h1 {
+            color: #1a202c;
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 10px;
+            border-bottom: 4px solid #2c5282;
+            padding-bottom: 15px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #718096;
+            font-size: 18px;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+        
+        .table-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        
+        .table-header {
+            display: grid;
+            grid-template-columns: 200px repeat(4, 1fr);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: bold;
+            font-size: 15px;
+        }
+        
+        .header-cell {
+            padding: 20px 15px;
+            text-align: center;
+            border-right: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .header-cell:last-child {
+            border-right: none;
+        }
+        
+        .dimension-label {
+            text-align: left;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .case-columns {
+            display: grid;
+            grid-template-columns: 200px repeat(4, 1fr);
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .case-columns:hover {
+            background: #f7fafc;
+        }
+        
+        .dimension-cell {
+            padding: 20px 15px;
+            background: #edf2f7;
+            font-weight: 600;
+            color: #2d3748;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-right: 1px solid #cbd5e0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .content-cell {
+            padding: 20px 15px;
+            color: #4a5568;
+            font-size: 13px;
+            line-height: 1.7;
+            border-right: 1px solid #e2e8f0;
+        }
+        
+        .content-cell:last-child {
+            border-right: none;
+        }
+        
+        .content-cell strong {
+            color: #2d3748;
+            font-weight: 600;
+        }
+        
+        .section-divider {
+            grid-column: 1 / -1;
+            background: linear-gradient(90deg, #4299e1 0%, #667eea 100%);
+            color: white;
+            padding: 12px 20px;
+            font-weight: bold;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .case-poor-fail {
+            border-left: 5px solid #fc8181;
+        }
+        
+        .case-poor-success {
+            border-left: 5px solid #68d391;
+        }
+        
+        .case-rich-fail {
+            border-left: 5px solid #f6ad55;
+        }
+        
+        .case-rich-success {
+            border-left: 5px solid #4fd1c5;
+        }
+        
+        .highlight-question {
+            background: #fef5e7;
+            border-left: 3px solid #f39c12;
+            padding: 8px;
+            margin: 5px 0;
+            font-style: italic;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-right: 5px;
+        }
+        
+        .badge-failure {
+            background: #fed7d7;
+            color: #c53030;
+        }
+        
+        .badge-success {
+            background: #c6f6d5;
+            color: #2f855a;
+        }
+        
+        .badge-mixed {
+            background: #feebc8;
+            color: #c05621;
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            .table-container {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+            .case-columns {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Detailed Comparative Case Analysis Framework</h1>
+    <p class="subtitle">Climate Resilience for Residential Land: Rich vs. Poor, Success vs. Failure</p>
+    
+    <div class="table-container">
+        <!-- TABLE HEADER -->
+        <div class="table-header">
+            <div class="header-cell dimension-label">Analytical Dimension</div>
+            <div class="header-cell">NYC Basement Apartments<br><small>(Poor/Vulnerable - FAIL)</small></div>
+            <div class="header-cell">New Orleans Hubs<br><small>(Poor/Vulnerable - SUCCESS?)</small></div>
+            <div class="header-cell">Hamptons Nourishment<br><small>(Rich/Powerful - FAIL)</small></div>
+            <div class="header-cell">Carlsbad Retreat<br><small>(Rich/Powerful - SUCCESS)</small></div>
+        </div>
+        
+        <!-- SECTION: LOCATION & CONTEXT -->
+        <div class="section-divider">LOCATION & CONTEXT</div>
+        
+        <div class="case-columns">
+            <div class="dimension-cell">Geographic Specifics</div>
+            <div class="content-cell case-poor-fail">Queens, Bronx, NYC (working-class immigrant neighborhoods)</div>
+            <div class="content-cell case-poor-success">Multiple neighborhoods, New Orleans, LA</div>
+            <div class="content-cell case-rich-fail">Southampton, East Hampton, Suffolk County, NY</div>
+            <div class="content-cell case-rich-success">Carlsbad, North San Diego County, CA</div>
+        </div>
+        
+        <div class="case-columns">
+            <div class="dimension-cell">Population Size/Density</div>
+            <div class="content-cell case-poor-fail">Est. 50,000-100,000 in basement units citywide</div>
+            <div class="content-cell case-poor-success">City pop. ~370,000 (post-Katrina recovery)</div>
+            <div class="content-cell case-rich-fail">Seasonal population swells from ~70,000 year-round to 250,000+</div>
+            <div class="content-cell case-rich-success">City pop. ~115,000</div>
+        </div>
+        
+        <div class="case-columns">
+            <div class="dimension-cell">Median Household Income</div>
+            <div class="content-cell case-poor-fail"><strong>$40,000-60,000</strong> (estimated for affected neighborhoods)</div>
+            <div class="content-cell case-poor-success"><strong>$41,604</strong> citywide (2020); affected areas lower</div>
+            <div class="content-cell case-rich-fail"><strong>$120,000+</strong> (seasonal residents much higher)</div>
+            <div class="content-cell case-rich-success"><strong>$105,000+</strong> (2020)</div>
+        </div>
+        
+        <div class="case-columns">
+            <div class="dimension-cell">Racial/Ethnic Composition</div>
+            <div class="content-cell case-poor-fail">60-80% minority (Latino, Asian, Black immigrants)</div>
+            <div class="content-cell case-poor-success">60% Black, 30% other minorities (affected neighborhoods higher)</div>
+            <div class="content-cell case-rich-fail">85%+ white, non-Hispanic</div>
+            <div class="content-cell case-rich-success">65% white, 25% Latino</div>
+        </div>
+        
+        <div class="case-columns">
+            <div class="dimension-cell">Education Levels</div>
+            <div class="content-cell case-poor-fail">High school or less: 40-60%</div>
+            <div class="content-cell case-poor-success">High school or less: 45-50%</div>
+            <div class="content-cell case-rich-fail">Bachelor's+: 60-70%</div>
+            <div class="content-cell case-rich-success">Bachelor's+: 50%+</div>
+        </div>
+        
+        <div class="case-columns">
+            <div class="dimension-cell">Housing Tenure</div>
+            <div class="content-cell case-poor-fail"><strong>90%+ renters</strong> in basement units</div>
+            <div class="content-cell case-poor-success">55% renters citywide (higher in affected areas)</div>
+            <div class="content-cell case-rich-fail"><strong>70%+ second/vacation homes;</strong> high ownership concentration</div>
+            <div class="content-cell case-rich-success">60% homeowners</div>
+        </div>
+        
+        <div class="case-columns">
+            <div class="dimension-cell">Age Demographics</div>
+            <div class="content-cell case-poor-fail">Working-age families (25-55) with children</div>
+            <div class="content-cell case-poor-success">Aging population (many elderly remained post-Katrina)</div>
+            <div class="content-cell case-rich-fail">Older wealthy (55-75); some younger wealthy families</div>
+            <div class="content-cell case-rich-success">Mix of retirees and working professionals</div>
+        </div>
+        
+        <div class="case-columns">
+            <div class="dimension-cell">Municipal Fiscal Capacity</div>
+            <div class="content-cell case-poor-fail">NYC: Strong tax base BUT political constraints on enforcement</div>
+            <div class="content-cell case-poor-success">Weak; dependent on tourism, port; state/federal support needed</div>
+            <div class="content-cell case-rich-fail">Strong local tax base supplemented by federal flood insurance subsidies</div>
+            <div class="content-cell case-rich-success">Strong tax base (~$90M+ annual budget)</div>
+        </div>
+        
+        <!-- SECTION: CLIMATE THREAT -->
+        <div class="section-divider">CLIMATE THREAT</div>
+        
+        <div class="case-columns">
+            <div class="dimension-cell">Primary Threat Type</div>
+            <div class="content-cell case-poor-fail">Flash flooding from extreme precipitation (Hurricane Ida 2021)</div>
+            <div class="content-cell case-poor-success">Hurricane storm surge + chronic subsidence + "nuisance flooding"</div>
+            <div class="content-cell case-rich-fail">Chronic coastal erosion + major storm events</div>
+            <div class="content-cell case-rich-success">Coastal erosion from waves, sea-level rise</div>
+        </div>
+        
+        <div class="case-columns">
+            <div class="dimension-cell">Acute vs. Chronic</div>
+            <div class="content-cell case-poor-fail">Acute events with catastrophic impacts</div>
+            <div class="content-cell case-poor-success"><strong>Both:</strong> acute hurricanes + chronic "nuisance" flooding</div>
+            <div class="content-cell case-rich-fail">Chronic erosion (1-3 feet/year) + acute storm impacts</div>
+            <div class="content-cell case-rich-success">Chronic (accelerating in recent decades)</div>
+        </div>
+        
+        <div class="case-columns">
+            <div class="dimension-cell">Physical Vulnerability Factors</div>
+            <div class="content-cell case-poor-fail">Below-grade units with inadequate drainage; illegal construction</div>
+            <div class="content-cell case-poor-success">Below sea-level geography; aging pump systems; subsiding land</div>
+            <div class="content-cell case-rich-fail">Barrier island, sandy substrate, narrow beach width</div>
+            <div class="content-cell case-rich-success">Bluffs undermined by wave action; unstable geology</div>
+        </div>
+        
+        <div class="case-columns">
+            <div class="dimension-cell">Historical Pattern</div>
+            <div class="content-cell case-poor-fail">Flooding worsens with climate change (more intense rainfall) + aging infrastructure</div>
+            <div class="content-cell case-poor-success">Major hurricanes (Betsy 1965, Katrina 2005) + 50+ smaller events since 2000</div>
+            <div class="content-cell case-rich-fail">Erosion documented since 1930s; worsening since 1990s with sea-level rise acceleration</div>
+            <div class="content-cell case-rich-success">Accelerating erosion since 1980s; El Niño winters particularly damaging</div>
+        </div>
+        
+        <div class="case-columns">
+            <div class="dimension-cell">Projected Future Risk</div>
+            <div class="content-cell case-poor-fail">FEMA: <strong>100-year flood now 25-year event;</strong> increasing frequency</div>
+            <div class="content-cell case-poor-success">Entire city vulnerable; category 3+ hurricane would overtop levees</div>
+            <div class="content-cell case-rich-fail"><strong>Beach loss inevitable</strong> without perpetual intervention</div>
+            <div class="content-cell case-rich-success">Continued bluff retreat; highway threatened within 20-30 years</div>
+        </div>
+        
+        <!-- SECTION: RESILIENCE INTERVENTIONS -->
+        <div class="section-divider">RESILIENCE INTERVENTIONS</div>
+        
+        <div class="case-columns">
+            <div class="dimension-cell">Type of Intervention</div>
+            <div class="content-cell case-poor-fail"><span class="badge badge-failure">MINIMAL/NONE</span> Some flood sensors, public awareness campaigns (limited), no housing alternatives</div>
+            <div class="content-cell case-poor-success"><strong>Social infrastructure:</strong> Community resilience hubs (buildings), emergency supply pre-positioning, coordination networks, training programs</div>
+            <div class="content-cell case-rich-fail"><strong>Engineering:</strong> Beach nourishment (sand pumping from offshore), hard structures (groins, seawalls), property elevation (some)</div>
+            <div class="content-cell case-rich-success"><strong>Planned adaptation:</strong> Managed retreat (moving Coast Highway inland); zoning changes; building setbacks</div>
+        </div>
+        
+        <div class="case-columns">
+            <div class="dimension-cell">Scale & Governance Level</div>
+            <div class="content-cell case-poor-fail">City jurisdiction but minimal action; federal disaster relief after catastrophic events</div>
+            <div class="content-cell case-poor-success"><strong>Hybrid:</strong> Federal funding (FEMA, HUD), city implementation, community orgs operate hubs</div>
+            <div class="content-cell case-rich-fail"><strong>Multi-level:</strong> Federal (Army Corps, flood insurance), state permits, local govt + private property owners</div>
+            <div class="content-cell case-rich-success">City-led with state Coastal Commission approval; some federal grants (BRIC program)</div>
+        </div>
+        
+        <div class="case-columns">
+            <div class="dimension-cell">Funding Sources & Amounts</div>
+            <div class="content-cell case-poor-fail"><strong>~$0 proactive</strong> (minimal city budget for enforcement)</div>
+            <div class="content-cell case-poor-success"><strong>$15M+</strong> from multiple sources (FEMA grants, nonprofit fundraising, city matching)</div>
+            <div class="content-cell case-rich-fail"><strong>$30M+ per nourishment cycle</strong> (federal ~65%, local ~35%); hundreds of millions cumulative</div>
+            <div class="content-cell case-rich-success"><strong>$40M+</strong> highway relocation (Caltrans, local, BRIC grants); ongoing costs</div>
+        </div>
+        
+        <div class="case-columns">
+            <div class="dimension-cell">Timeline</div>
+            <div class="content-cell case-poor-fail">Post-Ida (2021-present): Minimal change despite 11 deaths and ongoing risk</div>
+            <div class="content-cell case-poor-success">Post-Katrina (2005-present): 20 years organizing; hubs operational ~2023-2025</div>
+            <div class="content-cell case-rich-fail">1960s-present: 60+ years repeated interventions; cycles every 3-5 years</div>
+            <div class="content-cell case-rich-success">2020s planning; construction projected 2025-2030</div>
+        </div>
+        
+        <div class="case-columns">
+            <div class="dimension-cell">Key Implementation Actors & Stakeholders</div>
+            <div class="content-cell case-poor-fail"><strong>INACTION due to:</strong> Housing affordability crisis (alternatives would displace), immigration status (residents fear authorities), political calculation (enforcement = backlash)</div>
+            <div class="content-cell case-poor-success">Community organizations (neighborhood associations), NGOs (local foundations), faith-based orgs, City Office of Resilience</div>
+            <div class="content-cell case-rich-fail">Army Corps of Engineers; local municipalities; private homeowners' associations; beach management districts</div>
+            <div class="content-cell case-rich-success">City Public Works; Caltrans; Coastal Commission; engineering consultants; limited public participation</div>
+        </div>
+        
+        <!-- SECTION: POLITICAL ECONOMY & GOVERNANCE -->
+        <div class="section-divider">POLITICAL ECONOMY & GOVERNANCE</div>
+        
+        <div class="case-columns">
+            <div class="dimension-cell">Party Control/Ideology</div>
+            <div class="content-cell case-poor-fail">Democratic city, state, federal (during Ida)</div>
+            <div class="content-cell case-poor-success">Democratic city (post-Katrina); federal support bipartisan</div>
+            <div class="content-cell case-rich-fail">Mixed: Republican state representatives; wealthy residents split</div>
+            <div class="content-cell case-rich-success">Democratic state; Republican-leaning city (swing district)</div>
+        </div>
+        
+        <div class="case-columns">
+            <div class="dimension-cell">State-Local Dynamics</div>
+            <div class="content-cell case-poor-fail">NY State defers to NYC on housing enforcement; political will lacking at both levels</div>
+            <div class="content-cell case-poor-success">State provided some post-Katrina funding but limited capacity</div>
+            <div class="content-cell case-rich-fail">NY State Coastal Zone Management; tension over beach access (public trust doctrine)</div>
+            <div class="content-cell case-rich-success">California Coastal Commission has veto power; requires extensive environmental review</div>
+        </div>
+        
+        <div class="case-columns">
+            <div class="dimension-cell">Federal Role</div>
+            <div class="content-cell case-poor-fail">FEMA disaster relief post-facto; no proactive intervention</div>
+            <div class="content-cell case-poor-success">FEMA + HUD Community Development Block Grants, Army Corps flood control projects</div>
+            <div class="content-cell case-rich-fail">National Flood Insurance Program subsidizes rebuilding; Army Corps beach nourishment</div>
+            <div class="content-cell case-rich-success">BRIC grant eligibility; potential federal highway funds; FEMA mapping</div>
+        </div>
+        
+        <div class="case-columns">
+            <div class="dimension-cell">Private Sector Involvement</div>
+            <div class="content-cell case-poor-fail"><strong>Landlords profit</strong> from illegal units; perverse incentive against compliance</div>
+            <div class="content-cell case-poor-success">Minimal private sector role; some businesses support hubs</div>
+            <div class="content-cell case-rich-fail">Private homeowners + real estate developers lobby for continued protection</div>
+            <div class="content-cell case-rich-success">Property owners resist retreat; some lawsuits; tourism industry concerned</div>
+        </div>
+        
+        <div class="case-columns">
+            <div class="dimension-cell">Community Organization Strength</div>
+            <div class="content-cell case-poor-fail">Tenant organizing exists but limited by immigration status; language barriers</div>
+            <div class="content-cell case-poor-success"><strong>STRONG:</strong> Neighborhood associations, faith-based groups, mutual aid networks (legacy of civil rights era)</div>
+            <div class="content-cell case-rich-fail"><strong>WEAK:</strong> Homeowners' associations advocate for protection but lack collective action beyond lobbying</div>
+            <div class="content-cell case-rich-success"><strong>LIMITED:</strong> Some homeowner opposition; environmental groups support; limited broad mobilization</div>
+        </div>
+        
+        <div class="case-columns">
+            <div class="dimension-cell">Proximity to Economic Activity & Infrastructure</div>
+            <div class="content-cell case-poor-fail">Adjacent to NYC economic centers but marginalized from benefits</div>
+            <div class="content-cell case-poor-success">Port city; tourism; regional hub but economically weaker than pre-Katrina</div>
+            <div class="content-cell case-rich-fail">NYC metro commuter access; financial sector weekend/summer residents</div>
+            <div class="content-cell case-rich-success">San Diego metro; biotech/defense economy; I-5 corridor proximity</div>
+        </div>
+        
+        <!-- SECTION: OUTCOMES -->
+        <div class="section-divider">OUTCOMES</div>
+        
+        <div class="case-columns">
+            <div class="dimension-cell">Physical Effectiveness (Flood/Erosion Reduction)</div>
+            <div class="content-cell case-poor-fail"><span class="badge badge-failure">FAILURE</span> Zero reduction in flood risk; no infrastructure changes</div>
+            <div class="content-cell case-poor-success"><span class="badge badge-mixed">PARTIAL</span> Hubs speed aid but don't prevent flooding; pumps still fail regularly</div>
+            <div class="content-cell case-rich-fail"><span class="badge badge-failure">FAILURE</span> Sand washes away within 3-5 years; structures cause downdrift erosion</div>
+            <div class="content-cell case-rich-success"><span class="badge badge-success">SUCCESS</span> (projected) Highway will be protected; development setbacks enforced</div>
+        </div>
+        
+        <div class="case-columns">
+            <div class="dimension-cell">Economic Impacts</div>
+            <div class="content-cell case-poor-fail">Landlords continue profiting; tenants bear all risk; city faces liability from deaths</div>
+            <div class="content-cell case-poor-success">Avoided worse economic collapse; tourism recovering; but many residents never returned</div>
+            <div class="content-cell case-rich-fail">Property values maintained temporarily but unsustainable; tax burden on working class via flood insurance</div>
+            <div class="content-cell case-rich-success">Highway maintenance costs reduced long-term; some property devaluation near coast</div>
+        </div>
+        
+        <div class="case-columns">
+            <div class="dimension-cell">Displacement/ Gentrification Effects</div>
+            <div class="content-cell case-poor-fail"><strong>Enforcement would displace 50,000-100,000;</strong> inaction preserves precarious status quo</div>
+            <div class="content-cell case-poor-success">
+                <div class="highlight-question">CRITICAL QUESTION: Did resilience enable residents to stay, or did area gentrify? (Keenan climate gentrification model test)</div>
+            </div>
+            <div class="content-cell case-rich-fail">No displacement of wealthy; service workers priced out of entire region regardless</div>
+            <div class="content-cell case-rich-success">Minimal displacement (few residents near highway); concern about future development patterns</div>
+        </div>
+        
+        <div class="case-columns">
+            <div class="dimension-cell">Equity & Justice Dimensions</div>
+            <div class="content-cell case-poor-fail"><span class="badge badge-failure">SEVERE INJUSTICE</span> Immigrant, low-income residents bear climate risk to solve city's housing crisis; death toll concentrated in most vulnerable</div>
+            <div class="content-cell case-poor-success"><span class="badge badge-mixed">POTENTIALLY JUST</span> if prevented displacement; community-led model respects dignity & knowledge</div>
+            <div class="content-cell case-rich-fail"><span class="badge badge-failure">UNJUST</span> Wealthy protected at public expense; NFIP subsidizes moral hazard; working class pays via taxes</div>
+            <div class="content-cell case-rich-success"><span class="badge badge-mixed">MIXED</span> Proactive but who bears costs of lost beach access? Service workers still priced out of housing</div>
+        </div>
+        
+        <div class="case-columns">
+            <div class="dimension-cell">Sustainability (Temporal)</div>
+            <div class="content-cell case-poor-fail"><strong>UNSUSTAINABLE:</strong> Risk increasing with climate change; no path to resolution</div>
+            <div class="content-cell case-poor-success"><strong>SUSTAINABLE:</strong> Social capital persists; institutions built; model replicable</div>
+            <div class="content-cell case-rich-fail"><strong>UTTERLY UNSUSTAINABLE:</strong> Perpetual re-nourishment required; costs rising; eventually untenable</div>
+            <div class="content-cell case-rich-success"><strong>SUSTAINABLE:</strong> One-time infrastructure move avoids perpetual maintenance; addresses root cause</div>
+        </div>
+        
+        <div class="case-columns">
+            <div class="dimension-cell">Who Benefited?</div>
+            <div class="content-cell case-poor-fail">Landlords (continued rental income); city (avoids housing crisis); <strong>NOT tenants</strong></div>
+            <div class="content-cell case-poor-success">Residents (faster aid); community organizations (built capacity); city (avoided depopulation)</div>
+            <div class="content-cell case-rich-fail">Wealthy homeowners (preserved property values); real estate industry; federal contractors</div>
+            <div class="content-cell case-rich-success">Public (protected highway); future residents (safer development); <strong>NOT current beachfront owners</strong></div>
+        </div>
+        
+        <div class="case-columns">
+            <div class="dimension-cell">Who Paid Costs?</div>
+            <div class="content-cell case-poor-fail"><strong>Tenants</strong> (deaths, trauma, ongoing risk)</div>
+            <div class="content-cell case-poor-success">Federal taxpayers; residents (organizing labor, some displacement still occurred)</div>
+            <div class="content-cell case-rich-fail">Federal taxpayers (NFIP, Army Corps); local property taxes; ultimately unsustainable</div>
+            <div class="content-cell case-rich-success">All taxpayers (highway users); beachfront property owners (lost beach access value)</div>
+        </div>
+        
+        <!-- SECTION: THEORETICAL CONNECTIONS -->
+        <div class="section-divider">THEORETICAL CONNECTIONS</div>
+        
+        <div class="case-columns">
+            <div class="dimension-cell">Growth Machine (Molotch)</div>
+            <div class="content-cell case-poor-fail">Landlord growth machine profits from regulatory non-enforcement; city prioritizes development over safety</div>
+            <div class="content-cell case-poor-success">Post-disaster rebuilding as alternative to abandonment; tension between growth and equity agendas</div>
+            <div class="content-cell case-rich-fail">Growth machine attempts to preserve land value despite physical erosion undermining commodity stability</div>
+            <div class="content-cell case-rich-success">Growth machine adapts: shifts infrastructure to preserve development potential; rational when resources available</div>
+        </div>
+        
+        <div class="case-columns">
+            <div class="dimension-cell">Right to the City (Harvey)</div>
+            <div class="content-cell case-poor-fail">Tenants denied right to safe housing; capital accumulation via spatial exploitation of vulnerable</div>
+            <div class="content-cell case-poor-success">Residents assert right to return and remain post-disaster; challenge to displacement logic</div>
+            <div class="content-cell case-rich-fail">Wealthy assert exclusive right to coastal space; privatized benefits, socialized costs of protection</div>
+            <div class="content-cell case-rich-success">Public infrastructure prioritized over private property. BUT: Who has "right" to coast? Beachfront owners lose access</div>
+        </div>
+        
+        <div class="case-columns">
+            <div class="dimension-cell">Spatial Fix (Harvey)</div>
+            <div class="content-cell case-poor-fail">Housing crisis "solved" via dangerous housing; creates new contradiction (climate deaths)</div>
+            <div class="content-cell case-poor-success">Post-Katrina rebuilding as spatial fix but creates new vulnerabilities</div>
+            <div class="content-cell case-rich-fail">Attempted spatial fix (beach nourishment) creates new problem (unsustainable costs, ecological damage)</div>
+            <div class="content-cell case-rich-success">Spatial fix by moving infrastructure rather than fighting nature; but "fixes" problem for capital, not people</div>
+        </div>
+        
+        <div class="case-columns">
+            <div class="dimension-cell">Climate Gentrification (Keenan et al.)</div>
+            <div class="content-cell case-poor-fail">Inverse: disinvestment in flood protection keeps rents low; if improved, gentrification would displace</div>
+            <div class="content-cell case-poor-success">
+                <div class="highlight-question">KEY TEST: If area gentrifies post-hubs, validates Keenan model; if not, shows community control can resist</div>
+            </div>
+            <div class="content-cell case-rich-fail">N/A (already wealthy) BUT note broader pattern where resilience infrastructure attracts wealth</div>
+            <div class="content-cell case-rich-success">Potential future: managed retreat could create new "climate premium" areas</div>
+        </div>
+        
+        <div class="case-columns">
+            <div class="dimension-cell">Land-Use Regulation & Segregation (Trounstine)</div>
+            <div class="content-cell case-poor-fail">Trounstine's thesis confirmed: high-value areas protected, low-value ignored; racist immigration enforcement enables exploitation</div>
+            <div class="content-cell case-poor-success">Regulation failed pre-Katrina (allowed development in flood zones); post-Katrina opportunity to regulate justly lost</div>
+            <div class="content-cell case-rich-fail">Zoning protects high-value areas; beach access restricted via private property; working class excluded from coast</div>
+            <div class="content-cell case-rich-success">Proactive regulation (setbacks) applied to protect public interest; but class dimensions in who can afford to build with setbacks</div>
+        </div>
+        
+        <div class="case-columns">
+            <div class="dimension-cell">Space of Flows vs. Space of Places (Castells)</div>
+            <div class="content-cell case-poor-fail">City planning decisions (flows) sacrifice immigrant lives (places) for capital accumulation</div>
+            <div class="content-cell case-poor-success">Community organizes Space of Places to influence flows; builds alternative networks</div>
+            <div class="content-cell case-rich-fail">Flows (finance capital, real estate) shape protection of elite Places; service workers' Places expendable</div>
+            <div class="content-cell case-rich-success">Flows (state planning apparatus) enables rational adaptation in wealthy Place; question of whose Places matter</div>
+        </div>
+        
+        <div class="case-columns">
+            <div class="dimension-cell">Just City (Fainstein: Equity, Democracy, Diversity)</div>
+            <div class="content-cell case-poor-fail"><span class="badge badge-failure">FAILS ALL THREE</span> Equity violated (deaths); democracy weak (no voice for undocumented); diversity endangered (displacement risk)</div>
+            <div class="content-cell case-poor-success"><span class="badge badge-success">ALIGNS IF</span> prevents displacement and respects diversity; democratic if community-controlled</div>
+            <div class="content-cell case-rich-fail"><span class="badge badge-failure">FAILS ALL THREE</span> Equity (subsidies to wealthy), democracy (elite capture), diversity (exclusionary)</div>
+            <div class="content-cell case-rich-success"><span class="badge badge-mixed">MIXED</span> Democracy in process, diversity debatable (whose voices heard?), equity depends on who bears costs</div>
+        </div>
+        
+        <div class="case-columns">
+            <div class="dimension-cell">Globalized Urbanization (Brenner & Keil)</div>
+            <div class="content-cell case-poor-fail">NYC as global city attracts immigrant labor but externalizes climate costs onto them; global processes, local harms</div>
+            <div class="content-cell case-poor-success">New Orleans' declining position in urban hierarchy post-Katrina; attempts to maintain relevance via tourism</div>
+            <div class="content-cell case-rich-fail">Hamptons as global elite playground; connection to NYC global city; climate change as global process, local response</div>
+            <div class="content-cell case-rich-success">Carlsbad in Southern CA megalopolis; local decision embedded in regional/global climate dynamics</div>
+        </div>
+    </div>
+    
+</body>
+</html>
