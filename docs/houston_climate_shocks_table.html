@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Houston Climate Shocks Analysis Framework</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            padding: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+            background-color: #f5f5f5;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 12px;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 11px;
+        }
+        
+        th {
+            background-color: #34495e;
+            color: white;
+            padding: 12px 8px;
+            text-align: left;
+            font-weight: bold;
+            border: 1px solid #2c3e50;
+        }
+        
+        td {
+            padding: 10px 8px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        tr:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .primary-case {
+            background-color: #fff3cd !important;
+            font-weight: bold;
+        }
+        
+        .shadow-case {
+            background-color: #e8f4f8;
+        }
+        
+        .severity-high {
+            color: #c0392b;
+            font-weight: bold;
+        }
+        
+        .severity-medium {
+            color: #e67e22;
+        }
+        
+        .severity-low {
+            color: #27ae60;
+        }
+        
+        .notes {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #ecf0f1;
+            border-left: 4px solid #3498db;
+            font-size: 11px;
+        }
+        
+        .notes h3 {
+            margin-top: 0;
+            color: #2c3e50;
+            font-size: 13px;
+        }
+        
+        .legend {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            font-size: 10px;
+        }
+        
+        .legend-item {
+            display: inline-block;
+            margin-right: 20px;
+            margin-bottom: 5px;
+        }
+        
+        .legend-color {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            margin-right: 5px;
+            vertical-align: middle;
+            border: 1px solid #999;
+        }
+    </style>
+</head>
+<body>
+    <h1>Houston Climate Shocks Analysis Framework (2015-2025)</h1>
+    <p class="subtitle">Proposed Research Structure for Climate Gentrification and Neighborhood Perception Study</p>
+    
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 8%;">Event</th>
+                    <th style="width: 8%;">Date</th>
+                    <th style="width: 10%;">Type</th>
+                    <th style="width: 10%;">Severity Estimate</th>
+                    <th style="width: 15%;">Primary Affected Areas</th>
+                    <th style="width: 12%;">Damage/Displacement Pattern</th>
+                    <th style="width: 12%;">Recovery Dynamics</th>
+                    <th style="width: 12%;">Research Utility</th>
+                    <th style="width: 13%;">Case Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="primary-case">
+                    <td><strong>Hurricane Harvey</strong></td>
+                    <td>Aug 2017</td>
+                    <td>Hurricane + Extreme Flooding</td>
+                    <td class="severity-high">EXTREME<br>(500-yr flood)</td>
+                    <td>Citywide; esp. Meyerland, Third Ward, East Houston, Greenspoint</td>
+                    <td>$125B damage, 30K+ displaced; disproportionate damage in low-income areas despite geographic spread</td>
+                    <td>Differential rebuilding by income/race; gentrification in some damaged tracts (Zhai 2025)</td>
+                    <td>Archetypal case; extensive documentation; boundary perception baseline</td>
+                    <td><strong>PRIMARY CASE</strong><br>Most detailed analysis</td>
+                </tr>
+                
+                <tr class="shadow-case">
+                    <td>Memorial Day Flood</td>
+                    <td>May 2015</td>
+                    <td>Severe Flooding</td>
+                    <td class="severity-medium">HIGH</td>
+                    <td>West Houston, Memorial area, parts of downtown</td>
+                    <td>Concentrated in affluent west side; significant property damage but lower displacement</td>
+                    <td>Rapid private investment in recovery; insurance payouts higher</td>
+                    <td>Pre-Harvey comparison; tests wealth protection hypothesis</td>
+                    <td><strong>Shadow Case</strong><br>Wealth/vulnerability contrast</td>
+                </tr>
+                
+                <tr class="shadow-case">
+                    <td>Tax Day Flood</td>
+                    <td>Apr 2016</td>
+                    <td>Severe Flooding</td>
+                    <td class="severity-medium">HIGH</td>
+                    <td>North Houston, Greenspoint, parts of Fifth Ward</td>
+                    <td>Hit working-class neighborhoods; apartment complexes heavily damaged</td>
+                    <td>Slower recovery; many renters permanently displaced</td>
+                    <td>Renter vulnerability; pre-Harvey precedent for slow recovery patterns</td>
+                    <td><strong>Shadow Case</strong><br>Displacement mechanism</td>
+                </tr>
+                
+                <tr class="shadow-case">
+                    <td>Hurricane Ike</td>
+                    <td>Sep 2008*</td>
+                    <td>Hurricane</td>
+                    <td class="severity-high">EXTREME</td>
+                    <td>Galveston Bay area, East Houston, Channelview</td>
+                    <td>$30B damage; coastal and low-lying industrial areas hit hardest</td>
+                    <td>Some neighborhoods never fully recovered; precedent for permanent change</td>
+                    <td>Long-term neighborhood transformation; memory anchor for residents</td>
+                    <td><strong>Shadow Case</strong><br>Historical comparison<br>(*pre-2015 but relevant)</td>
+                </tr>
+                
+                <tr class="shadow-case">
+                    <td>Tropical Storm Imelda</td>
+                    <td>Sep 2019</td>
+                    <td>Tropical Storm + Flooding</td>
+                    <td class="severity-medium">MODERATE-HIGH</td>
+                    <td>East Harris County, Kingwood, Humble area</td>
+                    <td>Localized severe flooding; overlaps with some Harvey-affected areas</td>
+                    <td>Cumulative stress on already-damaged areas; "double-hit" neighborhoods</td>
+                    <td>Tests cumulative vulnerability hypothesis; repeat-impact effects</td>
+                    <td><strong>Shadow Case</strong><br>Cumulative vulnerability</td>
+                </tr>
+                
+                <tr class="shadow-case">
+                    <td>Winter Storm Uri</td>
+                    <td>Feb 2021</td>
+                    <td>Extreme Cold + Infrastructure Failure</td>
+                    <td class="severity-high">HIGH</td>
+                    <td>Citywide; disproportionate impacts in areas with older housing stock</td>
+                    <td>Power/water outages caused pipe bursts; displacement by housing type not just location</td>
+                    <td>Insurance disputes; disaster capitalism in repair/reconstruction sector</td>
+                    <td>Non-flood disaster type; infrastructure quality as vulnerability factor</td>
+                    <td><strong>Shadow Case</strong><br>Alternative hazard type</td>
+                </tr>
+                
+                <tr class="shadow-case">
+                    <td>Extreme Heat Events</td>
+                    <td>2023-2024</td>
+                    <td>Prolonged Extreme Heat</td>
+                    <td class="severity-medium">MODERATE</td>
+                    <td>Citywide; highest mortality in low-income, un-air-conditioned housing</td>
+                    <td>Less visible displacement; "slow violence" of heat stress; health impacts concentrate in vulnerable populations</td>
+                    <td>Limited public response; individual coping mechanisms; energy cost displacement pressure</td>
+                    <td>Chronic vs. acute stress; less dramatic but persistent vulnerability</td>
+                    <td><strong>Shadow Case</strong><br>Slow-onset hazard</td>
+                </tr>
+                
+                <tr class="shadow-case">
+                    <td>Derecho Event</td>
+                    <td>May 2024</td>
+                    <td>Severe Wind Storm</td>
+                    <td class="severity-medium">MODERATE</td>
+                    <td>Downtown, Heights, parts of East End</td>
+                    <td>Power outages, tree damage, some structural damage; rapid geographic variability</td>
+                    <td>Fast recovery in affluent areas; prolonged outages in underserved areas</td>
+                    <td>Recent event for current perception mapping; differential recovery visibility</td>
+                    <td><strong>Shadow Case</strong><br>Micro-scale variation</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="legend">
+        <strong>Legend:</strong><br>
+        <span class="legend-item">
+            <span class="legend-color" style="background-color: #fff3cd;"></span>
+            Primary Case (most detailed analysis)
+        </span>
+        <span class="legend-item">
+            <span class="legend-color" style="background-color: #e8f4f8;"></span>
+            Shadow Case (comparative context)
+        </span>
+        <span class="legend-item">
+            <span class="severity-high">●</span> Extreme/High Severity
+        </span>
+        <span class="legend-item">
+            <span class="severity-medium">●</span> Moderate-High Severity
+        </span>
+        <span class="legend-item">
+            <span class="severity-low">●</span> Low-Moderate Severity
+        </span>
+    </div>
+    
+    <div class="notes">
+        <h3>Research Framework Notes</h3>
+        <p><strong>Primary Case (Harvey):</strong> Serves as archetypal event with extensive existing documentation (Zhai 2025, FEMA records, media coverage). Use for detailed resident mapping, interviews, and establishing baseline neighborhood perception patterns.</p>
+        
+        <p><strong>Shadow Cases:</strong> Seven additional events provide comparative context and test specific hypotheses:</p>
+        <ul style="margin-left: 20px; font-size: 11px;">
+            <li><strong>Memorial Day 2015 & Tax Day 2016:</strong> Pre-Harvey events establish temporal sequence; test whether early floods "primed" neighborhoods for Harvey impacts</li>
+            <li><strong>Imelda 2019:</strong> Tests cumulative vulnerability - do neighborhoods hit by both Harvey and Imelda show amplified perception changes?</li>
+            <li><strong>Winter Storm Uri 2021:</strong> Different hazard type; tests whether non-flood disasters produce similar income-stratified recovery patterns</li>
+            <li><strong>Heat Events 2023-24:</strong> Chronic vs. acute stress; "slow violence" of persistent climate pressure vs. dramatic flood events</li>
+            <li><strong>Derecho 2024:</strong> Most recent event; allows real-time perception mapping with less memory distortion</li>
+        </ul>
+        
+        <p><strong>Analytical Questions Across Cases:</strong></p>
+        <ul style="margin-left: 20px; font-size: 11px;">
+            <li><strong>Geographic Concentration:</strong> Do the same neighborhoods get hit repeatedly (cumulative vulnerability) or do different events affect different areas?</li>
+            <li><strong>Damage Comparability:</strong> Can you identify neighborhood pairs with similar physical exposure but different socioeconomic characteristics?</li>
+            <li><strong>Recovery Speed:</strong> Does recovery timeline differ by income even when damage severity is comparable?</li>
+            <li><strong>Perception Persistence:</strong> Do older events (Memorial Day 2015) still shape current neighborhood boundaries, or does perception reset after each event?</li>
+            <li><strong>Event Type Matters:</strong> Do floods produce different perception changes than cold events or heat events?</li>
+        </ul>
+        
+        <p><strong>Data Collection Strategy:</strong> For Harvey, conduct full resident mapping + interviews. For shadow cases, use existing secondary sources (FEMA declarations, news reports, city assessments) to establish patterns. If rich data sources emerge for specific shadow cases (e.g., strong community organization documentation of Uri impacts), expand analysis of those events.</p>
+        
+        <p><strong>Cumulative Vulnerability Index:</strong> Create composite measure: # of events affecting each neighborhood × severity of damage in each. This allows comparing "frequently hit" vs. "occasionally hit" neighborhoods with similar total damage levels.</p>
+    </div>
+</body>
+</html>
