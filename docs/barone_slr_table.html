@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sea-Level Rise Response: 14 U.S. Coastal Cities</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.5;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f8f9fa;
+        }
+        
+        h1 {
+            color: #1a202c;
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 10px;
+            border-bottom: 4px solid #2c5282;
+            padding-bottom: 15px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #718096;
+            font-size: 16px;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        
+        .tier-section {
+            margin-bottom: 40px;
+        }
+        
+        .tier-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px 8px 0 0;
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .table-container {
+            background: white;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow-x: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        thead {
+            background: #edf2f7;
+            color: #2d3748;
+        }
+        
+        th {
+            padding: 15px 12px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 12px;
+            border-bottom: 2px solid #cbd5e0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .city-col { width: 140px; }
+        .governance-col { width: 200px; }
+        .revenue-col { width: 180px; }
+        .risk-col { width: 160px; }
+        .response-col { width: 200px; }
+        .performance-col { width: 220px; }
+        
+        tbody tr {
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        tbody tr:nth-child(even) {
+            background: #f7fafc;
+        }
+        
+        tbody tr:hover {
+            background: #edf2f7;
+        }
+        
+        td {
+            padding: 14px 12px;
+            font-size: 12px;
+            color: #2d3748;
+            vertical-align: top;
+            line-height: 1.6;
+        }
+        
+        td strong {
+            color: #1a202c;
+            font-weight: 600;
+        }
+        
+        .city-name {
+            font-size: 15px;
+            font-weight: bold;
+            color: #1a202c;
+            margin-bottom: 3px;
+        }
+        
+        .city-subtitle {
+            font-size: 11px;
+            color: #718096;
+        }
+        
+        .tier-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 5px;
+        }
+        
+        .tier-1 { background: #c6f6d5; color: #2f855a; }
+        .tier-2 { background: #bee3f8; color: #2c5282; }
+        .tier-3 { background: #feebc8; color: #c05621; }
+        .tier-4 { background: #fed7d7; color: #c53030; }
+        
+        .risk-extreme { color: #c53030; font-weight: 600; }
+        .risk-veryhigh { color: #dd6b20; font-weight: 600; }
+        .risk-high { color: #d69e2e; font-weight: 600; }
+        .risk-moderate { color: #38a169; font-weight: 600; }
+        
+        .summary-box {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-top: 30px;
+        }
+        
+        .summary-box h2 {
+            color: #2c5282;
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #4299e1;
+            padding-bottom: 8px;
+        }
+        
+        .summary-box h3 {
+            color: #2d3748;
+            font-size: 16px;
+            margin-top: 18px;
+            margin-bottom: 8px;
+        }
+        
+        .summary-box ul {
+            margin: 8px 0;
+            padding-left: 25px;
+        }
+        
+        .summary-box li {
+            margin: 6px 0;
+            color: #4a5568;
+            line-height: 1.6;
+        }
+        
+        .key-finding {
+            background: #e6fffa;
+            border-left: 4px solid #319795;
+            padding: 12px 15px;
+            margin: 12px 0;
+            border-radius: 4px;
+        }
+        
+        .key-finding strong {
+            color: #234e52;
+        }
+        
+        .footer {
+            text-align: center;
+            color: #718096;
+            font-size: 12px;
+            margin-top: 40px;
+            padding: 20px;
+            font-style: italic;
+        }
+        
+        @media print {
+            body { background: white; }
+            .table-container, .summary-box { 
+                box-shadow: none; 
+                border: 1px solid #ddd; 
+            }
+            .tier-section { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Sea-Level Rise Response in 14 U.S. Coastal Cities</h1>
+    <p class="subtitle">Comparative Political Economy Analysis: Governance, Risk, and Performance</p>
+    
+    <!-- TIER 1 -->
+    <div class="tier-section">
+        <div class="tier-header">Tier 1: Strong Performers</div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="city-col">City/Region</th>
+                        <th class="governance-col">Governance Structure</th>
+                        <th class="revenue-col">Revenue Mechanisms</th>
+                        <th class="risk-col">SLR Risk Level</th>
+                        <th class="response-col">Response Rigor</th>
+                        <th class="performance-col">Performance & Outcomes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><div class="city-name">New York City</div><div class="city-subtitle">NY</div></td>
+                        <td><strong>Strong city control + bi-state Port Authority.</strong> Mayor's Office of Climate Resiliency. Multi-agency coordination. Significant municipal autonomy.</td>
+                        <td>Port Authority independent revenue. Post-Sandy federal $900M+. City controls waterfront development.</td>
+                        <td><span class="risk-veryhigh">VERY HIGH</span><br>Sandy: $19B damages, 44 deaths. 17% flooded. 6.3 ft SLR by 2100.</td>
+                        <td><strong>HIGH:</strong> FiDi & Seaport Master Plan. PA NY/NJ Climate Guidelines mandatory. Lower Manhattan 70% protected.</td>
+                        <td>Rebuild by Design competition. Big U designed but not built (2023-24). PA proactive on SLR. Strong planning-to-implementation pipeline.<br><span class="tier-badge tier-1">TIER 1</span></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><div class="city-name">Miami-Dade</div><div class="city-subtitle">FL (#11, 46.9% at risk)</div></td>
+                        <td><strong>County-led regional.</strong> SE FL Climate Compact (4 counties). USACE partnership. Separate city initiatives coordinated.</td>
+                        <td>County tax + FL Resilient Florida grants. Miami Beach $79M+ grants. Miami Forever Bond $400M. State >$1B statewide.</td>
+                        <td><span class="risk-veryhigh">VERY HIGH</span><br>National vulnerability leader. Sunny-day flooding now. Porous limestone. Climate gentrification documented.</td>
+                        <td><strong>HIGH:</strong> County SLR Strategy (2021). Miami Forever Climate Ready. Resilient305. Miami Beach Vulnerability Assessment. $247M grants (2022).</td>
+                        <td>SE FL Compact enables coordination. Septic-to-sewer conversion underway. Infrastructure raised proactively. State support despite politics. Equity concerns regarding gentrification.<br><span class="tier-badge tier-1">TIER 1</span></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><div class="city-name">Charleston</div><div class="city-subtitle">SC (#10, 50.6% at risk)</div></td>
+                        <td><strong>City-led + state partnership.</strong> Strong mayor. Charleston Resilience Network. USACE partnership. SC first statewide plan (2022).</td>
+                        <td>Tourism tax for mitigation (2020 law innovation). Federal $766k NOAA. USACE $1.1B seawall proposal (65% fed, 35% city). Limited tax base.</td>
+                        <td><span class="risk-veryhigh">VERY HIGH</span><br>11x/year tidal flooding (2010s), projected 180x/year by 2045. Historic low-lying city.</td>
+                        <td><strong>MODERATE-HIGH:</strong> SLR Strategy updated every ~4 years (2015, 2019, 2023). Dutch Dialogues (2015). 3-ft freeboard requirements. Coastal Resilience Overlay.</td>
+                        <td>Iterative strategy updates demonstrate adaptive management. State became regional leader. Real estate disclosure laws. Building code updates. Dutch partnership innovative.<br><span class="tier-badge tier-1">TIER 1</span></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><div class="city-name">San Mateo County</div><div class="city-subtitle">CA (#13, 43.3% at risk)</div></td>
+                        <td><strong>Innovative special district: OneShoreline</strong> (independent agency crossing 20 jurisdictions). CA Coastal Commission oversight. BCDC regional coordination.</td>
+                        <td>Special district enables cross-jurisdictional funding. State Coastal Conservancy $8M. USACE SF Bay Study (WRDA 2024). Bay Area need: $110B by 2050.</td>
+                        <td><span class="risk-extreme">EXTREME</span><br>Most vulnerable Bay Area county. 3-4 ft SLR by 2100 (16-20% above global avg). Critical infrastructure threatened.</td>
+                        <td><strong>HIGH:</strong> OneShoreline unique governance model. County Vulnerability Assessment. Sustainable Streets Master Plan. Adapting to Rising Tides (BCDC). Strong equity focus.</td>
+                        <td>OneShoreline solves fragmentation problem. USACE partnership (2024). Regional coordination at scale (20 cities). Nature-based solutions + equity emphasis. Tech sector engaged. Implementation limited by funding gap.<br><span class="tier-badge tier-1">TIER 1</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <!-- TIER 2 -->
+    <div class="tier-section">
+        <div class="tier-header">Tier 2: Moderate-Strong Performers</div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="city-col">City/Region</th>
+                        <th class="governance-col">Governance Structure</th>
+                        <th class="revenue-col">Revenue Mechanisms</th>
+                        <th class="risk-col">SLR Risk Level</th>
+                        <th class="response-col">Response Rigor</th>
+                        <th class="performance-col">Performance & Outcomes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><div class="city-name">Cambridge</div><div class="city-subtitle">MA (#15, 40.1% at risk)</div></td>
+                        <td><strong>City + state/regional.</strong> Chapter 91 applies. Metro Boston coordination. MIT/Harvard influence. Charles River governance (state).</td>
+                        <td>Chapter 91 constraints similar to Boston. Property tax base stronger (universities). Academic institutions as partners. State grants. Federal research funding via universities.</td>
+                        <td><span class="risk-veryhigh">VERY HIGH</span><br>Similar to Boston (1.5 ft by 2050, 3 ft by 2070). Charles River flooding. Kendall Square tech hub vulnerable.</td>
+                        <td><strong>HIGH:</strong> Climate Vulnerability Assessment. University research partnerships (MIT Climate CoLab, Harvard). Tech sector engagement. Regional coordination with Boston.</td>
+                        <td>University research capacity major benefit. MIT/Harvard long-term institutional commitment. Tech sector resources. Shares Boston's Chapter 91 constraints. Academic-municipal partnerships provide technical expertise. Implementation data limited.<br><span class="tier-badge tier-2">TIER 2</span></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><div class="city-name">Virginia Beach</div><div class="city-subtitle">VA (#19, 29.6% at risk)</div></td>
+                        <td><strong>City within Hampton Roads regional.</strong> VA Coastal Resilience Master Plan (state). VA Port Authority (state). Hampton Roads Pilot (DoD partnership). Tourism major stakeholder.</td>
+                        <td>Tourism economy vulnerable. VA Community Flood Preparedness Fund (RGGI). Hampton Roads $12.3B port economy impact. Federal DoD interest. Limited local revenue vs need.</td>
+                        <td><span class="risk-high">HIGH</span><br>Hampton Roads 2nd highest US vulnerability after New Orleans. Regional military significance. Tourism at risk. 1 ft/century accelerating. Sinking land + SLR.</td>
+                        <td><strong>MODERATE:</strong> Part of VA Coastal Resilience Master Plan (2020 Framework). Hampton Roads SLR Pilot. USACE partnerships. Vision 2100 regional planning. Community Flood Preparedness Fund.</td>
+                        <td>Hampton Roads Pilot represents first-of-kind DoD intergovernmental climate project. Regional coordination framework. Tourism provides political will but creates constraints. RGGI funding helps. Fragmented implementation across jurisdictions.<br><span class="tier-badge tier-2">TIER 2</span></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><div class="city-name">St. Petersburg</div><div class="city-subtitle">FL (#17, 37.0% at risk)</div></td>
+                        <td><strong>City within county/state framework.</strong> Tampa Bay region. Pinellas County coordination. FL Resilient Florida Grant Program access. Tampa Bay Regional Planning Council.</td>
+                        <td>FL Resilient Florida >$1B statewide. Tampa Bay Regional Planning. Tourism tax revenues. Strong property tax base. State support despite climate politics framing.</td>
+                        <td><span class="risk-veryhigh">VERY HIGH</span><br>Tampa Bay region highly vulnerable. Barrier islands, low elevation. Growing population despite risk. Active hurricane threat. Tourism infrastructure vulnerable.</td>
+                        <td><strong>MODERATE-HIGH:</strong> Integrated Sustainability Action Plan (ISAP). Green infrastructure investments. Resilient Florida grant applications. Tampa Bay Regional Resilience Coalition. Nature-based solutions emphasis.</td>
+                        <td>Benefits from FL Resilient Florida ($1B+ statewide). Regional Tampa Bay coordination. Challenges: Development pressure continues despite risk. Tourism creates political constraints. Strong planning capacity, variable implementation.<br><span class="tier-badge tier-2">TIER 2</span></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><div class="city-name">Long Beach</div><div class="city-subtitle">CA (#24, 21.3% at risk)</div></td>
+                        <td><strong>City with independent port authority.</strong> Port of Long Beach (Harbor Department, 5-member Board appointed by Mayor). State public trust lands. Shares port complex with LA (nation's largest).</td>
+                        <td>Port generates substantial revenue (30,000 jobs, $180B cargo/year) but infrastructure needs exceed capacity. AB 691 compliance. Port requires climate resilience in new development permits.</td>
+                        <td><span class="risk-high">HIGH</span><br>11 inches SLR next 10 years, 2 ft by 2050, 6.5-10 ft by 2100. Three of 10 shipping piers vulnerable. Heat + SLR combined threat.</td>
+                        <td><strong>MODERATE-HIGH:</strong> Port Climate Adaptation & Coastal Resiliency Plan (2016, updated 2019, AB 691 compliant—among first 2 statewide). City Climate Resiliency Assessment (2015). Port requires resilience in all new permits.</td>
+                        <td>Among first two CA agencies to complete AB 691 assessment (leadership). Port-led resilience model. State compliance strong. Challenges: Massive economic engine at risk, equity concerns, heat+SLR combined threats. "Bit by bit" adaptation approach.<br><span class="tier-badge tier-2">TIER 2</span></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><div class="city-name">Oakland</div><div class="city-subtitle">CA</div></td>
+                        <td><strong>City with port department.</strong> Port of Oakland (independent department, 5-member Board appointed by Mayor). SF Bay Area 9-county regional coordination. BCDC oversight. State public trust lands. RSAP (2024).</td>
+                        <td>Port generates revenue (98,000 jobs, $130B impact) but limited vs infrastructure needs. Bay Area funding gap: $315M-$570M/year (2' SLR), $1.5B-$1.76B/year (6.6' SLR). CA Coastal Conservancy grants ($500k). Equity focus (flatlands vulnerable communities).</td>
+                        <td><span class="risk-veryhigh">VERY HIGH</span><br>Bay Area 3-7 ft SLR by 2100. ~20 miles vulnerable waterfront. Port critical national infrastructure ($180B cargo annually). Groundwater intrusion threat. Flatlands environmental justice concern.</td>
+                        <td><strong>MODERATE:</strong> Rising Seas & Oakland Infrastructure ($4.5M). Part of BCDC Regional Shoreline Adaptation Plan (SB 272, adopted Dec 2024). Focus on port + adjacent vulnerable communities. Nature-based solutions (Oakland Estuary Park).</td>
+                        <td>Benefits from Bay Area regional coordination (BCDC RSAP). Port proactive on resilience requirements for new development. $110B Bay Area need shows scale beyond local capacity. Most equity-focused approach. Limited city resources vs massive need. Port-city collaboration model.<br><span class="tier-badge tier-2">TIER 2-3</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <!-- TIER 3 -->
+    <div class="tier-section">
+        <div class="tier-header">Tier 3: Moderate-Weak Performers (Strong Planning, Implementation Gaps)</div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="city-col">City/Region</th>
+                        <th class="governance-col">Governance Structure</th>
+                        <th class="revenue-col">Revenue Mechanisms</th>
+                        <th class="risk-col">SLR Risk Level</th>
+                        <th class="response-col">Response Rigor</th>
+                        <th class="performance-col">Performance & Outcomes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><div class="city-name">Boston</div><div class="city-subtitle">MA (#22, 25.0% at risk)</div></td>
+                        <td><strong>State control (Chapter 91):</strong> Commonwealth owns land below mean low tide. Minimal city waterfront authority. Mass Port = state agency. State legislature approves coastal changes.</td>
+                        <td><strong>WEAK:</strong> Property tax only. No port revenue. No home rule on coast. Dependent on state/federal grants. Recent: $330k state grant.</td>
+                        <td><span class="risk-high">HIGH</span><br>1.5 ft by 2050, 3 ft by 2070. Colonial landfill at/near sea level. $150B+ economy. 25% properties at risk. 47-mile coastline.</td>
+                        <td><strong>MODERATE (slow):</strong> Climate Ready Boston (2016, 2019) internationally recognized. Coastal Flood Resilience Overlay (2021). 47-mile coastline projects in planning. Chapter 91 licenses outdated.</td>
+                        <td>Strong planning documentation (international recognition), limited implementation. 16% city shoreline, 50% state control. Private development stalled by regulatory complexity. Political will increasing but governance structure prevents action.<br><span class="tier-badge tier-3">TIER 3</span></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><div class="city-name">Norfolk</div><div class="city-subtitle">VA (#8, 51.6% at risk)</div></td>
+                        <td><strong>Complex fragmentation:</strong> VA Port Authority (state). City of Norfolk. Hampton Roads Planning. Naval Station Norfolk (federal/DoD). No single coordinating authority until recent state involvement.</td>
+                        <td><strong>WEAK:</strong> City budget ~$1B. Adaptation need $1B (= entire annual budget—demonstrates mismatch). Limited revenue. RGGI fund. Federal grants ($112M Ohio Creek). DoD involvement insufficient.</td>
+                        <td><span class="risk-extreme">EXTREME</span><br>2nd highest US vulnerability after New Orleans. World's largest naval base at risk. Sinking land + SLR. 1.7M people regional. 1 ft/century accelerating.</td>
+                        <td><strong>MODERATE:</strong> Vision 2100 (80-year planning horizon—longest in analysis). Coastal Resilience Overlay. Ohio Creek Living Shoreline ($112M federal). State Master Plan (2020). VA Coastal Resilience Plan.</td>
+                        <td>First US city 3-ft freeboard requirement (national leadership). Hampton Roads Pilot (first DoD intergovernmental climate partnership). Fragmented governance severely limits implementation. National security implications acknowledged but insufficient federal resources.<br><span class="tier-badge tier-3">TIER 3</span></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><div class="city-name">Honolulu</div><div class="city-subtitle">HI (#16, 38.0% at risk)</div></td>
+                        <td><strong>Consolidated city-county + state.</strong> HI Climate Commission (state). Multiple military installations (federal). Tourism stakeholder. Island constraints limit options.</td>
+                        <td>Tourism tax (20% to Maui Managed Retreat Fund as model). Limited island economy revenue. Heavy federal military presence. State Legislature approval required. Chief Resilience Officer created.</td>
+                        <td><span class="risk-veryhigh">VERY HIGH</span><br>38% at risk. 4 ft SLR by 2100 (16-20% above global avg). 131 miles state roads exposed. Kamehameha Highway damaged repeatedly. Lost 13+ miles beach.</td>
+                        <td><strong>MODERATE (fragmented):</strong> SLR Report (2017, 2022, 2025 updates). HI SLR Viewer (2025 update—excellent tool). 8 separate infrastructure/growth plans in development. Equity "social indicators" layer. Strong planning, slow implementation.</td>
+                        <td>Excellent visualization tools (HI SLR Viewer nationally recognized). Legislature changed "climate change" to "recurrent flooding" for Tea Party votes (2017—political barrier). No comprehensive integrated plan despite 2017 urgency. Maui pioneering retreat fund (2022). 8 fragmented plans, no coordination.<br><span class="tier-badge tier-3">TIER 3</span></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><div class="city-name">Jersey City</div><div class="city-subtitle">NJ (#18, 35.3% at risk)</div></td>
+                        <td><strong>Complex multi-state regional.</strong> Port Authority NY/NJ (bi-state). NJ DEP (state). Rebuild by Design federal post-Sandy. Hudson County coordination. Part of NJ Coastal Resilience Plan.</td>
+                        <td>Post-Sandy HUD $230M "Resist" infrastructure (Hoboken/JC/Weehawken). PA NY/NJ Guidelines apply. NJ Statewide Resilience Strategy. Land subsidence worsens SLR (3x global rate). Revenue limited vs NYC.</td>
+                        <td><span class="risk-veryhigh">VERY HIGH</span><br>35.3% at risk. NJ: 2.2-3.8 ft SLR by 2100 (4.5 ft with ice melt). Atlantic City: 23 flood days (2024 record). Hudson River + land subsidence (sinking).</td>
+                        <td><strong>MODERATE-HIGH:</strong> Rebuild by Design "Delay, Store, Discharge" plan. NJ Statewide Resilience Strategy. Living shorelines emphasis. Hoboken (adjacent): first LEED Gold city in NJ, net zero 2030 goal.</td>
+                        <td>Post-Sandy federal investment ($230M) created implementation capacity. Strong state framework (NJ DEP). Living shorelines + nature-based solutions piloted. Challenges: Subsidence compounds problem, limited local revenue, implementation gaps as disaster funding depletes. Sustainability uncertain.<br><span class="tier-badge tier-3">TIER 3</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <!-- TIER 4 -->
+    <div class="tier-section">
+        <div class="tier-header">Tier 4: Weak Performers (Fiscal Constraints Dominate)</div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="city-col">City/Region</th>
+                        <th class="governance-col">Governance Structure</th>
+                        <th class="revenue-col">Revenue Mechanisms</th>
+                        <th class="risk-col">SLR Risk Level</th>
+                        <th class="response-col">Response Rigor</th>
+                        <th class="performance-col">Performance & Outcomes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><div class="city-name">Stockton</div><div class="city-subtitle">CA (#23, 23.3% at risk)</div></td>
+                        <td><strong>Inland port (different model).</strong> City governance. Port of Stockton (city-owned). CA Delta Stewardship Council (state). San Joaquin River flooding (riverine + SLR). Agricultural vs urban tensions.</td>
+                        <td><strong>WEAK:</strong> Bankrupt (2012), recovered but fiscal constraints persist. Limited revenue base. Port revenue modest vs coastal ports. CA state support via Delta Council. Agricultural vs urban tensions over water/land use.</td>
+                        <td><span class="risk-high">MODERATE-HIGH</span><br>23.3% at risk despite inland location. Sacramento-San Joaquin Delta SLR + riverine flooding combined. Levee system critical. Unique subsidence from groundwater extraction.</td>
+                        <td><strong>LOW-MODERATE:</strong> Delta Plan (state level framework). Stockton Climate Action Plan exists but under-resourced. Focus on levee systems (maintenance prioritized). Bankruptcy recovery prioritized over climate adaptation.</td>
+                        <td>Post-bankruptcy (2012) fiscal constraints dominate all decisions. Unique inland SLR risk (Delta tidal system interaction). State Delta Plan provides framework but implementation limited by local fiscal capacity. Demonstrates fiscal health is prerequisite for climate action. Cities in financial crisis cannot simultaneously address long-term adaptation.<br><span class="tier-badge tier-4">TIER 4</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <!-- SUMMARY ANALYSIS -->
+    <div class="summary-box">
+        <h2>Key Findings: What Explains Performance Variation?</h2>
+        
+        <h3>Critical Insight: Risk Level Does NOT Predict Performance</h3>
+        
+        <div class="key-finding">
+            <strong>High performers despite extreme risk:</strong> San Mateo County (43.3% at risk, $110B regional need), Charleston (50.6% at risk, projected 180 flood days/year by 2045), Miami-Dade (46.9% at risk, sunny-day flooding currently occurring)
+        </div>
+        
+        <div class="key-finding">
+            <strong>Poor performers despite high risk:</strong> Norfolk (51.6% at risk, 2nd highest US vulnerability), Honolulu (38% at risk, 4 ft SLR by 2100), Jersey City (35.3% at risk)
+        </div>
+        
+        <div class="key-finding">
+            <strong>Core finding:</strong> Governance structure + funding mechanisms matter MORE than risk level for determining performance outcomes
+        </div>
+        
+        <h3>Strong Performers Share These Features:</h3>
+        <ul>
+            <li><strong>State-level enabling legislation/funding:</strong> Florida Resilient Florida program (>$1B statewide), California Coastal Conservancy grants, South Carolina statewide resilience plan (2022)</li>
+            <li><strong>Regional coordination mechanisms:</strong> San Mateo OneShoreline (20 cities), SE FL Regional Climate Compact (4 counties), Hampton Roads framework, BCDC Bay Area coordination (9 counties)</li>
+            <li><strong>Federal catalysts:</strong> Hurricane Sandy disaster funding (NYC $900M+, Jersey City $230M), military/DoD interest and partnership, USACE cost-sharing partnerships</li>
+            <li><strong>Innovative governance structures:</strong> Special districts (OneShoreline), independent port authorities (PA NY/NJ), Chief Resilience Officer positions, multi-agency coordination capacity</li>
+        </ul>
+        
+        <h3>Weak Performers Share These Constraints:</h3>
+        <ul>
+            <li><strong>Fiscal constraints:</strong> Stockton (post-bankruptcy recovery takes precedence), Norfolk (adaptation need equals entire annual city budget), Boston (limited revenue tools, no home rule)</li>
+            <li><strong>Fragmented governance without coordination:</strong> Honolulu (8 separate plans with no integration), Norfolk (city/state port/federal military split with unclear authority), pre-RSAP Bay Area jurisdictional fragmentation</li>
+            <li><strong>Political barriers:</strong> Honolulu Legislature terminology change (2017), variable state political will affecting implementation consistency</li>
+            <li><strong>State control without revenue sharing:</strong> Boston Chapter 91 model (state controls and restricts WITHOUT providing funding, coordination, or technical support)</li>
+        </ul>
+        
+        <h3>Boston's Unique Governance Challenge</h3>
+        <p><strong>Massachusetts Chapter 91 represents the most constraining governance structure in this entire 14-city comparative analysis.</strong></p>
+        
+        <div class="key-finding">
+            <strong>The California Comparison Reveals the Problem:</strong> California cities (San Mateo, Oakland, Long Beach) also have state oversight of waterfront lands via public trust doctrine and Coastal Commission jurisdiction. However, California provides grants (Coastal Conservancy, OPC), regional coordination frameworks (BCDC RSAP), technical assistance, and clear compliance guidance (AB 691). Massachusetts provides control and restrictions WITHOUT corresponding funding, coordination, or technical support. This governance gap—not the existence of state oversight itself—is Boston's primary structural barrier to effective SLR adaptation.
+        </div>
+        
+        <h3>Governance Models Ranked by Effectiveness:</h3>
+        <ol>
+            <li><strong>Independent bi-state authority:</strong> Port Authority NY/NJ (serves NYC, Jersey City) — Independent revenue streams, mandatory climate guidelines, regional scale</li>
+            <li><strong>Innovative special district:</strong> San Mateo OneShoreline — Crosses 20 jurisdictional boundaries, creates dedicated funding mechanism, solves fragmentation</li>
+            <li><strong>Strong county-level coordination:</strong> Miami-Dade — Regional scale enables multi-city coordination, substantial tax base, aggressive grant pursuit</li>
+            <li><strong>State partnership enabling local action:</strong> Charleston (SC), St. Petersburg (FL) — State provides enabling framework + funding + technical support for local implementation</li>
+            <li><strong>City-controlled port department:</strong> Oakland, Long Beach — Mayor-appointed boards maintain city control, port generates revenue (though insufficient for system-wide needs)</li>
+            <li><strong>Regional multi-jurisdictional coordination:</strong> Hampton Roads (Virginia Beach, Norfolk) — Coordination framework established but fragmented implementation across multiple jurisdictions</li>
+            <li><strong>University-enhanced municipal capacity:</strong> Cambridge — Technical expertise and research capacity from MIT/Harvard, but shares Boston's Chapter 91 constraints</li>
+            <li><strong>State control without support (LEAST EFFECTIVE):</strong> Boston — Commonwealth owns and controls waterfront WITHOUT providing funding, coordination, or technical assistance</li>
+            <li><strong>Fragmented multi-level without coordinator:</strong> Norfolk — City/state port/federal military with no clear primary authority or coordination mechanism</li>
+            <li><strong>Fiscally constrained post-crisis:</strong> Stockton — Post-bankruptcy fiscal recovery limits all climate adaptation spending</li>
+        </ol>
+        
+        <h3>Revenue Mechanism Effectiveness:</h3>
+        <p><strong>Most effective funding models:</strong></p>
+        <ul>
+            <li>State grant programs with dedicated climate funding (FL Resilient Florida $1B+, CA Coastal Conservancy project grants)</li>
+            <li>Independent authorities with revenue generation (PA NY/NJ port revenue, San Mateo special district taxation)</li>
+            <li>Post-disaster federal catalysts (Hurricane Sandy: NYC $900M+, Jersey City $230M HUD "Resist" program)</li>
+        </ul>
+        
+        <p><strong>Moderately effective:</strong></p>
+        <ul>
+            <li>Regional coordination with state support (Hampton Roads RGGI fund, Tampa Bay Regional Planning)</li>
+            <li>Innovative local revenue (Charleston tourism tax 2020 law, Maui 20% to managed retreat fund)</li>
+            <li>County-scale tax base (Miami-Dade combined with aggressive grant pursuit)</li>
+            <li>Port-generated revenue (Oakland, Long Beach—insufficient for system-wide needs but enables some action)</li>
+        </ul>
+        
+        <p><strong>Least effective:</strong></p>
+        <ul>
+            <li>State control without revenue sharing (Boston Chapter 91—control WITHOUT funding)</li>
+            <li>Post-bankruptcy constraints (Stockton—fiscal crisis overrides climate priorities)</li>
+            <li>Limited local authority with massive need (Norfolk—adaptation cost equals entire annual city budget)</li>
+        </ul>
+    </div>
+    
+    <div class="footer">
+        Table compiled December 2025 for PPUA:5266 Urban Theory and Science, Northeastern University<br>
+        Research by Christopher Barone | Comparative framework analysis by M. Rudolph<br>
+        Data sources: City climate action plans, state resilience strategies, federal reports (NOAA, FEMA, USACE), academic literature
+    </div>
+    
+</body>
+</html>
