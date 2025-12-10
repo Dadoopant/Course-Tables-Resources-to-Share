@@ -1,88 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rudolph Courses: Resources and Tables Static Websites Hosted at GitHub</title>
-    <style>
-        body {
-            font-family: "Helvetica Neue", Arial, sans-serif;
-            margin: 40px;
-            background: #fafafa;
-            color: #222;
-        }
-        h1 {
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-        p.description {
-            margin-bottom: 25px;
-            font-size: 16px;
-            color: #444;
-        }
-        .file-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 16px;
-        }
-        .file-table th {
-            background: #333;
-            color: #fff;
-            padding: 12px;
-            text-align: left;
-        }
-        .file-table td {
-            border-bottom: 1px solid #ddd;
-            padding: 10px;
-        }
-        .file-table tr:hover {
-            background: #f0f0f0;
-        }
-        a {
-            text-decoration: none;
-            color: #0366d6;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Rudolph Courses: Resources and Tables Static Websites Hosted at GitHub</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 10px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+    .card a {
+      text-decoration: none;
+      color: #0073e6;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .card p {
+      color: #555;
+      margin-top: 8px;
+    }
+  </style>
 </head>
-
 <body>
 
 <h1>Rudolph Courses: Resources and Tables Static Websites Hosted at GitHub</h1>
 
-<p class="description">
-    This page provides direct access to HTML-based static resources, tables, and comparison frameworks used across Rudolph Courses. All files are hosted in this repository and can be opened directly in your browser.
-</p>
+<div class="container">
 
-<table class="file-table">
-    <tr>
-        <th>File</th>
-        <th>Description</th>
-    </tr>
+  <div class="card">
+    <a href="Tomao_concise_comparison_table_concise.html">Tomao Concise Comparison Table</a>
+    <p>A streamlined comparison table for Tomao-related course materials.</p>
+  </div>
 
-    <tr>
-        <td><a href="Tomao_concise_comparison_table_concise.html">Tomao_concise_comparison_table_concise.html</a></td>
-        <td>Concise comparison table summarizing Tomao framework elements.</td>
-    </tr>
+  <div class="card">
+    <a href="autumn_comparison_table_4quadrant.html">Autumn Four-Quadrant Comparison Table</a>
+    <p>Four-quadrant analytical table for Autumn case frameworks.</p>
+  </div>
 
-    <tr>
-        <td><a href="autumn_comparison_table_4quadrant.html">autumn_comparison_table_4quadrant.html</a></td>
-        <td>Four-quadrant comparison table from the Autumn framework.</td>
-    </tr>
+  <div class="card">
+    <a href="barone_slr_table.html">Barone Sea Level Rise Table</a>
+    <p>Scenario table and risk comparison for sea level rise impacts.</p>
+  </div>
 
-    <tr>
-        <td><a href="barone_slr_table.html">barone_slr_table.html</a></td>
-        <td>Sea-level-rise table based on the Barone dataset.</td>
-    </tr>
+  <div class="card">
+    <a href="detailed_case_framework_extensive.html">Detailed Case Framework (Extensive)</a>
+    <p>Full detailed version of the analytical case framework.</p>
+  </div>
 
-    <tr>
-        <td><a href="detailed_case_framework_extensive.html">detailed_case_framework_extensive.html</a></td>
-        <td>Extensive case framework document with detailed analytical structure.</td>
-    </tr>
-
-</table>
+</div>
 
 </body>
 </html>
